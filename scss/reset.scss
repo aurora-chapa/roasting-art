@@ -1,0 +1,11 @@
+@import 'design-system.scss';
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+    width: 100%;
+    background-color: $background-color;
+}

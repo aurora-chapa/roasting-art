@@ -1,0 +1,12 @@
+.header {
+    height: 80px;
+    background-color: $white;
+    box-shadow: 0 4px 19px rgba(255, 114, 113, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-logo {
+        max-width: 200px;
+    }
+}

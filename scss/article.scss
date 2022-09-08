@@ -1,0 +1,54 @@
+.article {
+  max-width: 1220px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 40px;
+
+  &-image {
+    max-width: 600px;
+    height: auto;
+    border-radius: 20px;
+  }
+
+	&
+
+	&-feedback {
+		&-description {
+			margin: 0 0 40px;
+
+			&-author {
+				display: flex;
+				gap: 10px;
+				margin: 10px 0 20px;
+			}
+		}
+		
+		&-comment {
+			margin: 0 0 40px;
+
+			&-textarea {
+				margin: 20px 0 20px;
+				width: 400px;
+				height: 150px;
+				border-radius: 20px;
+				border: 1px solid $gray-light;
+				padding: 20px;
+
+				&:focus {
+					outline: none !important;
+					border: 2px solid $primary;
+				}
+			}
+		}	
+
+		&-forum-comment {
+			margin: 20px 0;
+
+			&-hr {
+				border: 0.2px solid $gray-extralight;
+				margin: 20px 0;
+			}
+		}
+	}
+}

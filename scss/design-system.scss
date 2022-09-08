@@ -1,0 +1,59 @@
+//COLOR SYSTEM
+
+$primary: #FF7271;
+$primary-strong: #CC4C4B;
+$accent: #FFC279;
+$accent-strong: #BE7218;
+$gray-strong: #676767;
+$gray-medium: #9A9A9A;
+$gray-light: #E3E3E3;
+$gray-extralight: #f0f0f0;
+$white: #FFFFFF;
+$background-color: $white;
+
+//FONT SYSTEM
+@mixin text($size, $color, $weight: 400) {
+    font-family: "Montserrat", sans-serif;
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+.text-l-primary {
+	@include text(22px, $primary, 700);
+}
+
+.text-m-graymedium {
+    @include text(16px, $gray-medium);
+}
+
+.text-m-graystrong {
+    @include text(16px, $gray-strong, 700);
+}
+
+.text-s-graymedium {
+	@include text(14px, $gray-medium);
+}
+
+.links {
+    @include text(16px, $accent);
+    &:hover {
+      color: $accent-strong;
+			cursor: pointer;
+    }
+}
+
+//BUTTONS
+
+.button-submit {
+	@include text(16px, $white, 700);
+	padding: 10px 20px;
+	background-color: $accent;
+	border-radius: 5px;
+	border: none;
+
+	&:hover {
+		background-color: $accent-strong;
+		cursor: pointer;
+	}
+}
