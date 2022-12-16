@@ -1,17 +1,22 @@
 .article {
-  max-width: 1220px;
-  margin: 40px auto;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  gap: 40px;
+	max-width: 1220px;
+	margin: 40px auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	padding: 40px 20px;
+	background-color:$white;
+	border-radius: 20px;
 
   &-image {
     max-width: 600px;
     height: auto;
-    border-radius: 20px;
-  }
 
-	&
+		&-src {
+			width: 100%;
+			border-radius: 20px;
+		}
+  }
 
 	&-feedback {
 		&-description {
@@ -26,14 +31,37 @@
 		
 		&-comment {
 			margin: 0 0 40px;
+			display: flex;
+			flex-direction:column;
+
+			&-username {
+				width: 200px;
+				height: 30px;
+				margin-top: 20px;
+				border-radius: 10px;
+				border: 1px solid $gray-light;
+				padding: 5px;
+				font-family: "Montserrat", sans-serif;
+
+				&::placeholder {
+					color: $gray-medium;
+					font-style: italic;
+				}
+
+				&:focus {
+					outline: none !important;
+					border: 2px solid $primary;
+				}
+			}
 
 			&-textarea {
 				margin: 20px 0 20px;
-				width: 400px;
+				width: 500px;
 				height: 150px;
 				border-radius: 20px;
 				border: 1px solid $gray-light;
 				padding: 20px;
+				font-family: "Montserrat", sans-serif;
 
 				&:focus {
 					outline: none !important;
@@ -44,11 +72,42 @@
 
 		&-forum-comment {
 			margin: 20px 0;
-
-			&-hr {
-				border: 0.2px solid $gray-extralight;
-				margin: 20px 0;
-			}
+			padding: 20px;
+			background-color: $gray-extralight;
+			border-radius: 20px;
 		}
 	}
 }
+
+@media screen and (min-width: 761px) and (max-width: 1260px) {
+	.article {
+		display: block;
+		margin: 20px auto;
+		max-width: 800px;
+
+		&-image {
+			margin: 0 auto 40px;
+			border-radius: 10px;
+		}
+	}		
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+	.article {
+		display:block;
+		margin: 20px auto;
+		max-width: 310px;
+
+		&-image {
+			max-width: 300px;
+			margin: 0 auto 40px;
+			border-radius: 10px;
+
+		}
+
+		&-feedback-comment-textarea {
+			width: 270px;
+		}
+	}		
+}
+

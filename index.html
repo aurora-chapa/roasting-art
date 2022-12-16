@@ -4,7 +4,8 @@
 		<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buen Viaje</title>
+    <title>Roasting 🔥 Art</title>
+		<link rel="icon" type="image/x-icon" href="/src/favicon.svg">
     <link rel="stylesheet" href="css/app.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,41 +17,39 @@
 		</header>
 
 		<article class="article">
-			<img class="article-image" src="src/space-calavera.jpeg"></img>
+			<div class="article-image">
+				<img class="article-image-src" src="src/space-calavera.jpeg"></img>
+			</div>
 
 			<div class="article-feedback">
 				<div class="article-feedback-description">
-					<p class="text-l-primary">SPACE CALAVERA</p>
+					<p class="text-l-primary-700">SPACE CALAVERA</p>
 					<div class="article-feedback-description-author">
-						<p class="text-m-graymedium">by</p>
+						<p class="text-m-graymedium-400">by</p>
 						<a class="links">Aurora Chapa</a>
 					</div>
-					<p class="text-m-graymedium">
+					<p class="text-s-graymedium-400">
 						At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. 
 					</p>
 				</div>
 
-				<div class="article-feedback-comment">
-					<label for="comment" class="text-m-graystrong">Roast this piece!</p>
-					<textarea type="text" name="comment" class="article-feedback-comment-textarea"></textarea>
-					<div>
-						<button class="button-submit" type="submit">Send!</button>
-					</div>
+				<div class="article-feedback-comment" id="add-comment-block">
+					<p class="text-m-graystrong-700">Roast this piece!</p>
+					<form id="roast-form">
+						<input id="roast-username-box" type="text" name="username" class="article-feedback-comment-username" placeholder="Username" /></input>
+						<textarea id="roast-comment-box" type="text" name="comment" class="article-feedback-comment-textarea"></textarea>
+						<button class="button-submit">Send!</button>
+					</form>
 				</div>
 
 				<div class="article-feedback-forum">
-					<a class="text-m-graystrong">Comments</a>
-					<div class="article-feedback-forum-comment">
-						<a class="text-s-graymedium">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. </a>
-						<hr class="article-feedback-forum-comment-hr">
-					</div>
-
-					<div class="article-feedback-forum-comment">
-						<a class="text-s-graymedium">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. </a>
-						<hr class="article-feedback-forum-comment-hr">
+					<a class="text-m-graystrong-700">Comments</a>
+					<div id="roast-comments">
+							<p class="text-s-graymedium-400"><i>No comments yet</i> </p>
 					</div>
 				</div>
 			</div>
 		</article>
+		<script src="/js/app.js"></script>
   </body>
 </html>
