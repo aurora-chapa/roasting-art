@@ -9,3 +9,18 @@ body {
     width: 100%;
     background-color: $background-color;
 }
+
+input[type="radio" i] {
+    appearance: none;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: #FF572233;
+    border: 3px solid #FFF;
+    box-shadow: 0 0 0 1px $primary;
+    margin-right: 3px;
+
+    &:checked {
+        background: $primary;
+    }
+}

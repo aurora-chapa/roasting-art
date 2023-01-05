@@ -24,12 +24,14 @@ function addComment(e) {
   //Getting inputs
   const currentComment = document.querySelector("#roast-comment-box").value;
   const currentUser = document.querySelector("#roast-username-box").value;
+  const currentReaction = document.querySelector("input[type='radio'][name=reaction]:checked");
 
   //Data validtation
   
-  if (currentUser === "" && currentComment === "") {
+  if (currentUser === "" && currentComment === "" && currentReaction == null) {
     errorMessage("Username is mandatory 🧐");
     errorMessage("Oopsie, you can't send empty messages 🤔");
+    errorMessage("Summary type is requiered 🤔");
     return;
   } else if (currentComment === "") {
     errorMessage("Oopsie, you can't send empty messages 🤔");
@@ -37,7 +39,10 @@ function addComment(e) {
   } else if (currentUser === "") {
     errorMessage("Username is mandatory 🧐");
     return;
-  } else if (currentUser !== "" && currentComment !== "") {
+  } else if (currentReaction == null) {
+    errorMessage("Summary type is requiered 🤔");
+    return;
+  } else if (currentUser !== "" && currentComment !== "" && currentReaction !== null) {
     successMessage("Your comment was successfully added! 😎");
   }
 
@@ -46,6 +51,7 @@ function addComment(e) {
     id: Date.now(),
     user: currentUser,
     comment: currentComment, 
+    reaction: currentReaction.value,
   }
 
   comments = [...comments, commentsObj]
@@ -90,12 +96,22 @@ function commentLayout () {
 
   if(comments.length > 0) {
     comments.forEach ( comment => {
+      let reactionValue = "";
+
+      if (comment.reaction === "loveit") {
+        reactionValue = '<img src="src/loveit.svg" style="width:24px;"></img>';
+      } else {
+        reactionValue = '<img src="src/criticism.svg" style="width:24px;"></img>';
+      }
 
       const commentsDiv = document.createElement('div');
       commentsDiv.innerHTML = `
       <div class="article-feedback-forum-comment">
-        <p class="text-m-graystrong-700">${comment.user}</p>
-        <p class="text-s-graymedium-400">${comment.comment}</p>
+        <div class="article-feedback-forum-comment-reaction">${reactionValue}</div>
+        <div class="article-feedback-forum-comment-userfeedback">
+          <p class="text-m-graystrong-700">${comment.user}</p>
+          <p class="text-s-graymedium-400">${comment.comment}</p>
+        </div>
       </div>
       `;
       roastComments.appendChild(commentsDiv);

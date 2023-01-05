@@ -37,7 +37,17 @@
 					<p class="text-m-graystrong-700">Roast this piece!</p>
 					<form id="roast-form">
 						<input id="roast-username-box" type="text" name="username" class="article-feedback-comment-username" placeholder="Username" /></input>
-						<textarea id="roast-comment-box" type="text" name="comment" class="article-feedback-comment-textarea"></textarea>
+						<div class="article-feedback-comment-reaction">
+							<div class="article-feedback-comment-reaction-input">
+								<input id="roast-reaction-loveit" name="reaction" type="radio" value="loveit"/ class="radiobutton"></input>
+								<label for="roast-reaction-loveit" class="article-feedback-comment-reaction-input-positive text-s-graystrong-400">Positive review</label>
+							</div>
+							<div class="article-feedback-comment-reaction-input">
+								<input id="roast-reaction-criticism" name="reaction" type="radio" value="criticism" class="radiobutton"/>
+								<label for="roast-reaction-criticism" class="article-feedback-comment-reaction-input-constructive text-s-graystrong-400">Constructive review</label>
+							</div>
+						</div>
+						<textarea id="roast-comment-box" type="text" name="comment" class="article-feedback-comment-textarea" placeholder="Write your thoughts about this"></textarea>
 						<button class="button-submit">Send!</button>
 					</form>
 				</div>

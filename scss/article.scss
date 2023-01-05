@@ -34,6 +34,45 @@
 			display: flex;
 			flex-direction:column;
 
+			&-reaction {
+				margin-top: 20px;
+				display: flex;
+				gap: 24px;
+				flex-wrap: wrap;
+
+				&-input {
+					display: flex;
+					align-items: center;
+					gap: 5px;
+
+					&-positive {
+						display: flex;
+						align-items:center;
+
+						&::before {
+							content: url('/src/loveit.svg');
+							display: inline-block;
+							width: 24px;
+							height: 24px;
+							margin-right: 5px;
+						}
+					}
+
+					&-constructive {
+						display: flex;
+						align-items:center;
+
+						&::before {
+							content: url('/src/criticism.svg');
+							display: inline-block;
+							width: 24px;
+							height: 24px;
+							margin-right: 5px;
+						}
+					}
+				}
+			}
+
 			&-username {
 				width: 200px;
 				height: 30px;
@@ -63,6 +102,11 @@
 				padding: 20px;
 				font-family: "Montserrat", sans-serif;
 
+				&::placeholder {
+					color: $gray-medium;
+					font-style: italic;
+				}
+
 				&:focus {
 					outline: none !important;
 					border: 2px solid $primary;
@@ -71,6 +115,9 @@
 		}	
 
 		&-forum-comment {
+			display: grid;
+			grid-template-columns: auto 1fr;
+			gap: 10px;
 			margin: 20px 0;
 			padding: 20px;
 			background-color: $gray-extralight;
