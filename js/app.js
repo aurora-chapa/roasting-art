@@ -31,7 +31,19 @@ function addComment(e) {
   if (currentUser === "" && currentComment === "" && currentReaction == null) {
     errorMessage("Username is mandatory 🧐");
     errorMessage("Oopsie, you can't send empty messages 🤔");
-    errorMessage("Summary type is requiered 🤔");
+    errorMessage("Summary type is required 🤔");
+    return;
+  } else if (currentUser === "" && currentComment === "") {
+    errorMessage("Username is mandatory 🧐");
+    errorMessage("Oopsie, you can't send empty messages 🤔");
+    return;
+  } else if (currentUser === "" && currentReaction == null) {
+    errorMessage("Username is mandatory 🧐");
+    errorMessage("Summary type is required 🤔");
+    return;
+  } else if (currentComment === "" && currentReaction == null) {
+    errorMessage("Oopsie, you can't send empty messages 🤔");
+    errorMessage("Summary type is required 🤔");
     return;
   } else if (currentComment === "") {
     errorMessage("Oopsie, you can't send empty messages 🤔");
@@ -103,6 +115,8 @@ function commentLayout () {
       } else {
         reactionValue = '<img src="src/criticism.svg" style="width:24px;"></img>';
       }
+      const commentDate = new Date()
+      let currentCommentDate = commentDate.toLocaleString();
 
       const commentsDiv = document.createElement('div');
       commentsDiv.innerHTML = `
@@ -110,7 +124,7 @@ function commentLayout () {
         <div class="article-feedback-forum-comment-reaction">${reactionValue}</div>
         <div class="article-feedback-forum-comment-userfeedback">
           <p class="text-m-graystrong-700">${comment.user}</p>
-          <p class="text-s-graymedium-400">${comment.comment}</p>
+          <p class="text-s-graystrong-400">${comment.comment}</p>
         </div>
       </div>
       `;
