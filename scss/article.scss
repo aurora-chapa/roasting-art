@@ -88,8 +88,7 @@
 				}
 
 				&:focus {
-					outline: none !important;
-					border: 2px solid $primary;
+					outline: 2px solid $primary;
 				}
 			}
 
@@ -108,20 +107,37 @@
 				}
 
 				&:focus {
-					outline: none !important;
-					border: 2px solid $primary;
+					outline: 2px solid $primary;
 				}
 			}
 		}	
 
 		&-forum-comment {
 			display: grid;
-			grid-template-columns: auto 1fr auto;
+			grid-template-areas: 
+				"reaction feedback"
+				"date date";
+			grid-template-columns: auto 1fr;
+			grid-template-rows: auto 1fr;
 			gap: 10px;
 			margin: 20px 0;
 			padding: 20px;
 			background-color: $gray-extralight;
 			border-radius: 20px;
+
+			&-reaction {
+				grid-area: reaction;
+			}
+
+			&-userfeedback {
+				grid-area: feedback;
+			}
+
+			&-date {
+				grid-area: date;
+				text-align: right;
+				margin-top: 10px;
+			}
 		}
 	}
 }

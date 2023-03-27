@@ -61,6 +61,7 @@ function addComment(e) {
   //Adds current comment to comment section
   commentsObj = {
     id: Date.now(),
+    date: moment().format("YYYY-DD-MM"),
     user: currentUser,
     comment: currentComment, 
     reaction: currentReaction.value,
@@ -108,15 +109,14 @@ function commentLayout () {
 
   if(comments.length > 0) {
     comments.forEach ( comment => {
-      let reactionValue = "";
+      let reactionValue;
 
       if (comment.reaction === "loveit") {
         reactionValue = '<img src="src/loveit.svg" style="width:24px;"></img>';
       } else {
         reactionValue = '<img src="src/criticism.svg" style="width:24px;"></img>';
       }
-      const commentDate = new Date()
-      let currentCommentDate = commentDate.toLocaleString();
+      const commentDate = comment.date;
 
       const commentsDiv = document.createElement('div');
       commentsDiv.innerHTML = `
@@ -126,6 +126,7 @@ function commentLayout () {
           <p class="text-m-graystrong-700">${comment.user}</p>
           <p class="text-s-graystrong-400">${comment.comment}</p>
         </div>
+        <p class="text-s-graymedium-400 article-feedback-forum-comment-date"><i>${commentDate}</i></p>
       </div>
       `;
       roastComments.appendChild(commentsDiv);

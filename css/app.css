@@ -34,6 +34,12 @@
   font-size: 22px;
   font-weight: 700; }
 
+.text-xs-graymedium-400 {
+  font-family: "Montserrat", sans-serif;
+  color: #9A9A9A;
+  font-size: 11px;
+  font-weight: 400; }
+
 .text-s-graymedium-400 {
   font-family: "Montserrat", sans-serif;
   color: #9A9A9A;
@@ -189,6 +195,12 @@
   color: #FF7271;
   font-size: 22px;
   font-weight: 700; }
+
+.text-xs-graymedium-400 {
+  font-family: "Montserrat", sans-serif;
+  color: #9A9A9A;
+  font-size: 11px;
+  font-weight: 400; }
 
 .text-s-graymedium-400 {
   font-family: "Montserrat", sans-serif;
@@ -404,8 +416,7 @@ input[type="radio" i] {
         color: #9A9A9A;
         font-style: italic; }
       .article-feedback-comment-username:focus {
-        outline: none !important;
-        border: 2px solid #FF7271; }
+        outline: 2px solid #FF7271; }
     .article-feedback-comment-textarea {
       margin: 20px 0 20px;
       width: 500px;
@@ -418,16 +429,25 @@ input[type="radio" i] {
         color: #9A9A9A;
         font-style: italic; }
       .article-feedback-comment-textarea:focus {
-        outline: none !important;
-        border: 2px solid #FF7271; }
+        outline: 2px solid #FF7271; }
   .article-feedback-forum-comment {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "reaction feedback" "date date";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
     gap: 10px;
     margin: 20px 0;
     padding: 20px;
     background-color: #f2f2f2;
     border-radius: 20px; }
+    .article-feedback-forum-comment-reaction {
+      grid-area: reaction; }
+    .article-feedback-forum-comment-userfeedback {
+      grid-area: feedback; }
+    .article-feedback-forum-comment-date {
+      grid-area: date;
+      text-align: right;
+      margin-top: 10px; }
 
 @media screen and (min-width: 761px) and (max-width: 1260px) {
   .article {
